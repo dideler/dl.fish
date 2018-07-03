@@ -16,7 +16,7 @@ fisher dideler/fish-dl
 ## Usage
 
 ```fish
-fish-dl
+dl "https://www.youtube.com/watch?v=hC8CH0Z3L54"
 ```
 
 [travis-link]: https://travis-ci.org/dideler/fish-dl
