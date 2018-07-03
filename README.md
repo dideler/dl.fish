@@ -7,10 +7,15 @@ Wrapper around youtube-dl to easily download media when using the [fish shell].
 
 ## Install
 
-With [fisherman]
 
-```
+Install with your favourite fish package manager, such as [fisherman] or [oh-my-fish]
+
+```shell
+# Install with fisherman
 fisher dideler/fish-dl
+
+# Install with oh-my-fish
+omf install https://github.com/dideler/fish-dl
 ```
 
 ## Usage
@@ -24,4 +29,5 @@ dl "https://www.youtube.com/watch?v=hC8CH0Z3L54"
 [slack-link]: https://fisherman-wharf.herokuapp.com
 [slack-badge]: https://fisherman-wharf.herokuapp.com/badge.svg
 [fisherman]: https://github.com/fisherman/fisherman
+[oh-my-fish]: https://github.com/oh-my-fish/oh-my-fish
 [fish shell]: https://fishshell.com/
