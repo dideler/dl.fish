@@ -3,7 +3,7 @@
 [![Build Status][travis-badge]][travis-link]
 [![Slack Room][slack-badge]][slack-link]
 
-Wrapper around youtube-dl to easily download media
+Wrapper around youtube-dl to easily download media when using the [fish shell].
 
 ## Install
 
@@ -24,3 +24,4 @@ fish-dl
 [slack-link]: https://fisherman-wharf.herokuapp.com
 [slack-badge]: https://fisherman-wharf.herokuapp.com/badge.svg
 [fisherman]: https://github.com/fisherman/fisherman
+[fish shell]: https://fishshell.com/
