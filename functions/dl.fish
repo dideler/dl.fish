@@ -1,6 +1,6 @@
 function dl --description "Opinionated alias for youtube-dl"
     for path in $argv
-        __y_download $path
+        __dl_download $path
     end
 end
 
