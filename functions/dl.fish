@@ -31,14 +31,15 @@ function dl --description "Opinionated alias for youtube-dl"
 end
 
 function __dl_download --argument path
-    set --local yt_dl_options '--ignore-config' \
-                              '--quiet' \
-                              '--no-mtime' \
-                              '--output "~/Music/%(title)s.%(ext)s"' \
-                              '--extract-audio' \
-                              '--audio-format mp3'
-
+    set --local output_dir "$HOME/Music"
+    set --local yt_dl_options "--ignore-config" \
+                              "--quiet" \
+                              "--no-mtime" \
+                              "--output '$output_dir/%(title)s.%(ext)s'" \
+                              "--extract-audio" \
+                              "--audio-format mp3"
     set --local dl_cmd "youtube-dl $yt_dl_options $path"
+    set --local spinner_msg " @ Saving to $output_dir\r"
 
-    spin "$dl_cmd"
+    spin --format $spinner_msg $dl_cmd
 end
