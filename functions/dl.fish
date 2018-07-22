@@ -10,7 +10,7 @@ function __dl_print_help
 end
 
 function __dl_print_version
-    echo "dl version 1.0.0"
+    echo "dl version 1.1.0"
 end
 
 function dl --description "Opinionated alias for youtube-dl"
