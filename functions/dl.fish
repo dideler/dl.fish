@@ -1,12 +1,18 @@
 function __dl_print_help
-    printf "Usage: dl [OPTION] 'URL'\n\n"
-    printf "Description:\n"
-    printf "    Download media easily from the web\n\n"
-    printf "Examples:\n"
-    printf "    dl 'https://example.com/media-id'\n\n"
-    printf "Options:\n"
-    printf "    -h, --help      Prints helps\n"
-    printf "    -v, --version   Prints version"
+    echo "Usage: dl [OPTION] URL"
+    echo
+    echo "Description:"
+    echo "    Easily download songs to your Music directory."
+    echo "    Currently limited to audio (MP3) only."
+    echo "    Depends on youtube-dl."
+    echo
+    echo "Examples:"
+    echo "    dl 'https://www.youtube.com/watch?v=some-video'"
+    echo "    dl https://soundcloud.com/some-profile/some-song"
+    echo
+    echo "Options:"
+    echo "    -h, --help      Prints helps"
+    echo "    -v, --version   Prints version"
 end
 
 function __dl_print_version
