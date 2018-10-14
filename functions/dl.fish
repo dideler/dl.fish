@@ -5,7 +5,7 @@ function __dl_print_help
     printf "Examples:\n"
     printf "    dl 'https://example.com/media-id'\n\n"
     printf "Options:\n"
-    printf "    -h, --help      Prints helps"
+    printf "    -h, --help      Prints helps\n"
     printf "    -v, --version   Prints version"
 end
 
