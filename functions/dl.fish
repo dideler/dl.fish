@@ -16,7 +16,7 @@ function __dl_print_help
 end
 
 function __dl_print_version
-    echo "dl version 1.2.2"
+    echo "dl version 1.2.3"
 end
 
 function dl --description "Opinionated alias for youtube-dl"
