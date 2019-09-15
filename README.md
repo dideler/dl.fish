@@ -1,4 +1,5 @@
-# fish-dl
+# fish-dl [![CircleCI](https://circleci.com/gh/dideler/fish-dl.svg?style=svg)](https://circleci.com/gh/dideler/fish-dl)
+
 
 Wrapper around youtube-dl to easily download audio when using the [fish shell].
 
