@@ -8,16 +8,19 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install curl
+          command: |
+            apt-get update --quiet
+            apt-get install --yes --quiet curl
+      - run:
           name: Install youtube-dl
           command: |
-            wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
+            curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
             chmod a+rx /usr/local/bin/youtube-dl
             youtube-dl --version
       - run:
           name: Install fisher
           command: |
-            apt-get update --quiet
-            apt-get install --yes --quiet curl
             curl -sLo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisher
             fisher --version
       - run:
