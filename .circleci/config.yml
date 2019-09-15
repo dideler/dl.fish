@@ -8,10 +8,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install curl
+          name: Install curl and python
           command: |
             apt-get update --quiet
-            apt-get install --yes --quiet curl
+            apt-get install --yes --quiet curl python
       - run:
           name: Install youtube-dl
           command: |
