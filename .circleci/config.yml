@@ -8,6 +8,12 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install youtube-dl
+          command: |
+            curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+            chmod a+rx /usr/local/bin/youtube-dl
+            youtube-dl --version
+      - run:
           name: Install fisher
           command: |
             apt-get update --quiet
