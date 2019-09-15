@@ -32,10 +32,6 @@ But 99% of the time, I use it for dowloading music, and got tired of its complic
 This is an opinionated wrapper to download audio as MP3 with a good enough filename to a specific directory.
 
 
-[travis-link]: https://travis-ci.org/dideler/fish-dl
-[travis-badge]: https://img.shields.io/travis/dideler/fish-dl.svg
-[slack-link]: https://fisherman-wharf.herokuapp.com
-[slack-badge]: https://fisherman-wharf.herokuapp.com/badge.svg
 [fisherman]: https://github.com/fisherman/fisherman
 [oh-my-fish]: https://github.com/oh-my-fish/oh-my-fish
 [fish shell]: https://fishshell.com/
