@@ -8,10 +8,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install curl and python
+          name: Install curl + python + ffmpeg
           command: |
             apt-get update --quiet
-            apt-get install --yes --quiet curl python
+            apt-get install --yes --quiet curl python ffmpeg
       - run:
           name: Install youtube-dl
           command: |
