@@ -1,7 +1,14 @@
 # fish-dl [![CircleCI](https://circleci.com/gh/dideler/fish-dl.svg?style=svg)](https://circleci.com/gh/dideler/fish-dl)
 
+Opinionated wrapper around youtube-dl to easily download audio when using the [fish shell].
 
-Wrapper around youtube-dl to easily download audio when using the [fish shell].
+All downloads get saved as MP3 in the `$HOME/Music` directory, with a filename from the content's title.
+
+## Demo
+
+![Example usage of fish-dl](https://user-images.githubusercontent.com/497458/66087331-02a4dc00-e56f-11e9-936c-d1f6177a1c84.gif)
+
+Works with any youtube-dl supported source.
 
 ## Install
 
