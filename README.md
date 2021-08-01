@@ -15,11 +15,11 @@ Works with any youtube-dl supported source.
 Install with your favourite fish package manager, such as [fisherman] or [oh-my-fish]
 
 ```shell
+# Install with fisher v4 or v2
+fisher install dideler/fish-dl
+
 # Install with fisher v3
 fisher add dideler/fish-dl
-
-# Install with fisher v2
-fisher install dideler/fish-dl
 
 # Install with oh-my-fish
 omf install https://github.com/dideler/fish-dl
