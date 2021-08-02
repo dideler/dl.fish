@@ -8,10 +8,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Install curl + python + ffmpeg
+          name: Install curl + python + ffmpeg + ruby
           command: |
             apt-get update --quiet
-            apt-get install --yes --quiet curl python ffmpeg
+            apt-get install --yes --quiet curl python ffmpeg ruby
       - run:
           name: Install youtube-dl
           command: |
@@ -28,6 +28,9 @@ jobs:
           command: |
             fisher install < fish_plugins
             fisher install .
+      - run:
+          name: Set XDG cache directory for fish-spin depedency
+          command: set -U XDG_CACHE_HOME $HOME/.cache && mkdir -p $XDG_CACHE_HOME
       - run:
           name: Run tests
           command: fishtape test/*.fish
