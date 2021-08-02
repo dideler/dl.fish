@@ -3,10 +3,10 @@ function setup
 end
 
 function teardown
-    command rm -rf ~/Music/quality\ content.mp3
+    command rm -rf ~/Music/1\ Second\ Video.mp3
 end
 
 @test "downloads a YouTube video as an MP3 in the Music directory" -e (
-    dl "https://www.youtube.com/watch?v=J1R5S-X9DEw"
-    command ls ~/Music/quality\ content.mp3
+    dl "https://www.youtube.com/watch?v=Wch3gJG2GJ4"
+    command ls ~/Music/1\ Second\ Video.mp3
 )
