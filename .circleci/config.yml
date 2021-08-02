@@ -29,5 +29,8 @@ jobs:
             fisher install < fish_plugins
             fisher install .
       - run:
+          name: Set XDG cache directory for fish-spin depedency
+          command: set -U XDG_CACHE_HOME $HOME/.cache && mkdir -p $XDG_CACHE_HOME
+      - run:
           name: Run tests
           command: fishtape test/*.fish
