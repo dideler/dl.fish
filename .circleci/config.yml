@@ -34,5 +34,3 @@ jobs:
       - run:
           name: Run tests
           command: fishtape test/*.fish
-          environment:
-            TERM: xterm-256color
