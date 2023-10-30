@@ -1,4 +1,4 @@
-# fish-dl [![CircleCI](https://circleci.com/gh/dideler/fish-dl.svg?style=svg)](https://circleci.com/gh/dideler/fish-dl)
+# dl.fish [![CircleCI](https://circleci.com/gh/dideler/dl.fish.svg?style=svg)](https://circleci.com/gh/dideler/dl.fish)
 
 Opinionated wrapper around ~~youtube-dl~~ yt-dlp to easily download audio when using the [fish shell].
 
@@ -6,7 +6,7 @@ All downloads get saved as MP3 in the `$HOME/Music` directory, with a filename f
 
 ## Demo
 
-![Example usage of fish-dl](https://user-images.githubusercontent.com/497458/66087331-02a4dc00-e56f-11e9-936c-d1f6177a1c84.gif)
+![Example usage of dl.fish](https://user-images.githubusercontent.com/497458/66087331-02a4dc00-e56f-11e9-936c-d1f6177a1c84.gif)
 
 Works with any yt-dlp supported source.
 
@@ -16,13 +16,13 @@ Install with your favourite fish package manager, such as [fisherman] or [oh-my-
 
 ```shell
 # Install with fisher v4 or v2
-fisher install dideler/fish-dl
+fisher install dideler/dl.fish
 
 # Install with fisher v3
-fisher add dideler/fish-dl
+fisher add dideler/dl.fish
 
 # Install with oh-my-fish
-omf install https://github.com/dideler/fish-dl
+omf install https://github.com/dideler/dl.fish
 ```
 
 ## Usage

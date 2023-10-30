@@ -24,7 +24,7 @@ jobs:
             curl -sL git.io/fisher | source && fisher install jorgebucaran/fisher
             fisher --version
       - run:
-          name: Install fish-dl
+          name: Install dl.fish
           command: |
             fisher install < fish_plugins
             fisher install .
