@@ -4,7 +4,7 @@ function __dl_print_help
     echo "Description:"
     echo "    Easily download songs to your Music directory."
     echo "    Currently limited to audio (MP3) only."
-    echo "    Depends on youtube-dl."
+    echo "    Depends on yt-dlp."
     echo
     echo "Examples:"
     echo "    dl 'https://www.youtube.com/watch?v=some-video'"
@@ -19,7 +19,7 @@ function __dl_print_version
     echo "dl version 1.2.5"
 end
 
-function dl --description "Opinionated alias for youtube-dl"
+function dl --description "Opinionated alias for yt-dlp"
     set --local options 'h/help' 'v/version'
     argparse $options -- $argv
 
@@ -44,7 +44,7 @@ function __dl_download --argument path
                               "--output '$output_dir/%(title)s.%(ext)s'" \
                               "--extract-audio" \
                               "--audio-format mp3"
-    set --local dl_cmd "youtube-dl $yt_dl_options '$path'"
+    set --local dl_cmd "yt-dlp $yt_dl_options '$path'"
     set --local spinner_msg " @ Saving to $output_dir\r"
 
     spin --format $spinner_msg $dl_cmd
