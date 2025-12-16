@@ -2,7 +2,8 @@
 
 Opinionated wrapper around ~~youtube-dl~~ yt-dlp to easily download audio when using the [fish shell].
 
-All downloads get saved as MP3 in the `$HOME/Music` directory, with a filename from the content's title.
+All downloads get saved as MP3 in the `$HOME/Music` directory, or optionally Apple Music's library,
+with a filename based on the content's title and with metadata embedded into the file.
 
 ## Demo
 
@@ -41,6 +42,8 @@ Repeat `fisher install` to update the installed snapshot.
 ```fish
 dl "https://www.youtube.com/watch?v=hC8CH0Z3L54"
 ```
+
+Run `dl -h` or `dl --help` for more info.
 
 ## Goals
 

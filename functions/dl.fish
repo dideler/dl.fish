@@ -1,16 +1,22 @@
+set -g apple_auto_add_path ~/Music/Music/Media.localized/Automatically\ Add\ to\ Music.localized/
+
 function __dl_print_help
     echo "Usage: dl [OPTION] URL"
     echo
     echo "Description:"
     echo "    Download audio (MP3) from YouTube, SoundCloud, etc. to your Music folder"
+    echo "    or directly into your Apple Music library for automatic import."
     echo
     echo "Options:"
     echo "    -h, --help      Show this help message"
     echo "    -v, --version   Show version information"
     echo "    -s, --silent    Suppress progress spinner"
+    echo "    -a, --apple     Save to Apple Music auto-add folder:"
+    echo "                    $apple_auto_add_path"
     echo
     echo "Examples:"
     echo "    dl https://youtube.com/watch?v=abc123"
+    echo "    dl --apple --silent https://soundcloud.com/artist/track"
 end
 
 function __dl_print_version
@@ -19,8 +25,8 @@ function __dl_print_version
     printf "dl version %s\nyt-dlp version %s\n" $dl_version $ytdlp_version
 end
 
-function dl --description "Download audio with yt-dlp"
-    set --local options 'h/help' 'v/version' 's/silent'
+function dl --description "Download audio with yt-dlp, optionally into Apple Music"
+    set --local options 'h/help' 'v/version' 's/silent' 'a/apple'
     argparse $options -- $argv; or return
 
     if set --query _flag_help
@@ -30,14 +36,23 @@ function dl --description "Download audio with yt-dlp"
     end
 
     set --local silent (set --query _flag_silent && echo 1 || echo 0)
+    set --local apple  (set --query _flag_apple  && echo 1 || echo 0)
 
     for url in $argv
-        __dl_download $url $silent
+        __dl_download $url $silent $apple
     end
 end
 
-function __dl_download --argument-names url silent
+function __dl_download --argument-names url silent apple
     set --local output_dir "$HOME/Music"
+    if test $apple -eq 1
+        set output_dir $apple_auto_add_path
+        if not test -d $output_dir
+            printf "error: Apple Music auto-add directory does not exist:\n       %s\n" $output_dir >&2
+            return 1
+        end
+    end
+
     set --local yt_dl_options "--ignore-config" \
                               "--quiet" \
                               "--no-mtime" \
