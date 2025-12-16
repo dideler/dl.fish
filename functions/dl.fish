@@ -35,6 +35,13 @@ function dl --description "Download audio with yt-dlp, optionally into Apple Mus
         __dl_print_version; return 0
     end
 
+    if not command -q yt-dlp
+        echo "Error: yt-dlp is not installed" >&2
+        echo "Install with `brew install yt-dlp`" >&2
+        echo "or visit https://github.com/yt-dlp/yt-dlp?tab=readme-ov-file#installation for alternative methods." >&2
+        return 1
+    end
+
     set --local silent (set --query _flag_silent && echo 1 || echo 0)
     set --local apple  (set --query _flag_apple  && echo 1 || echo 0)
 
