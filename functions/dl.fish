@@ -52,7 +52,8 @@ function __dl_download --argument-names url silent
     if test $silent -eq 1
         eval $dl_cmd
     else
+        set --local clear_line "\r\033[K"
         set --local spinner_msg " @ Saving to $output_dir\r"
-        spin --format="$spinner_msg" "$dl_cmd"
+        spin --interval=100 --format="$spinner_msg" "$dl_cmd" && printf $clear_line
     end
 end
