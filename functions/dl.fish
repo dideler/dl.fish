@@ -20,7 +20,7 @@ function __dl_print_help
 end
 
 function __dl_print_version
-    set -l dl_version "1.2.5"
+    set -l dl_version "1.3.0"
     set -l ytdlp_version (yt-dlp --version 2>/dev/null; or echo "not installed")
     printf "dl version %s\nyt-dlp version %s\n" $dl_version $ytdlp_version
 end
