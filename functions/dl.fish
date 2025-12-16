@@ -13,6 +13,7 @@ function __dl_print_help
     echo "Options:"
     echo "    -h, --help      Prints helps"
     echo "    -v, --version   Prints version"
+    echo "    -s, --silent    Silent mode"
 end
 
 function __dl_print_version
@@ -20,7 +21,7 @@ function __dl_print_version
 end
 
 function dl --description "Opinionated alias for yt-dlp"
-    set --local options 'h/help' 'v/version'
+    set --local options 'h/help' 'v/version' 's/silent'
     argparse $options -- $argv; or return
 
     if set --query _flag_help
@@ -31,12 +32,15 @@ function dl --description "Opinionated alias for yt-dlp"
         return 0
     end
 
-    for path in $argv
-        __dl_download $path
+    set --local silent 0
+    if set --query _flag_silent; set silent 1; end
+
+    for url in $argv
+        __dl_download $url $silent
     end
 end
 
-function __dl_download --argument path
+function __dl_download --argument-names url silent
     set --local output_dir "$HOME/Music"
     set --local yt_dl_options "--ignore-config" \
                               "--quiet" \
@@ -44,8 +48,11 @@ function __dl_download --argument path
                               "--output '$output_dir/%(title)s.%(ext)s'" \
                               "--extract-audio" \
                               "--audio-format mp3"
-    set --local dl_cmd "yt-dlp $yt_dl_options '$path'"
-    set --local spinner_msg " @ Saving to $output_dir\r"
-
-    spin --format $spinner_msg $dl_cmd
+    set --local dl_cmd "yt-dlp $yt_dl_options '$url'"
+    if test $silent -eq 1
+        eval $dl_cmd
+    else
+        set --local spinner_msg " @ Saving to $output_dir\r"
+        spin --format="$spinner_msg" "$dl_cmd"
+    end
 end
