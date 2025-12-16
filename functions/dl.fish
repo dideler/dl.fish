@@ -21,7 +21,7 @@ end
 
 function dl --description "Opinionated alias for yt-dlp"
     set --local options 'h/help' 'v/version'
-    argparse $options -- $argv
+    argparse $options -- $argv; or return
 
     if set --query _flag_help
         __dl_print_help
