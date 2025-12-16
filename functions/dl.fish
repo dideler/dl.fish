@@ -51,6 +51,7 @@ function __dl_download --argument-names url silent
     set --local yt_dl_options "--ignore-config" \
                               "--quiet" \
                               "--no-mtime" \
+                              "--embed-metadata" \
                               "--output '$output_dir/%(title)s.%(ext)s'" \
                               "--extract-audio" \
                               "--audio-format mp3"
