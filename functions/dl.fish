@@ -17,7 +17,13 @@ function __dl_print_help
 end
 
 function __dl_print_version
-    echo "dl version 1.2.5"
+    set -l dl_version "1.2.5"
+    set -l ytdlp_version (yt-dlp --version 2>/dev/null)
+    if test -z "$ytdlp_version"
+        set ytdlp_version "not installed"
+    end
+    printf "dl version %s\n" $dl_version
+    printf "yt-dlp version %s" $ytdlp_version
 end
 
 function dl --description "Opinionated alias for yt-dlp"
