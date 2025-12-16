@@ -7,6 +7,6 @@ function teardown
 end
 
 @test "downloads a YouTube video as an MP3 in the Music directory" -e (
-    dl "https://www.youtube.com/watch?v=Wch3gJG2GJ4"
+    dl "https://www.youtube.com/watch?v=Wch3gJG2GJ4" > /dev/null
     command ls ~/Music/1\ Second\ Video.mp3
 )
