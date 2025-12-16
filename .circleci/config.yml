@@ -33,4 +33,4 @@ jobs:
           command: set -U XDG_CACHE_HOME $HOME/.cache && mkdir -p $XDG_CACHE_HOME
       - run:
           name: Run tests
-          command: fishtape test/*.fish
+          command: fishtape tests/*.fish
