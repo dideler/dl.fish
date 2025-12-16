@@ -25,6 +25,17 @@ fisher add dideler/dl.fish
 omf install https://github.com/dideler/dl.fish
 ```
 
+## Development
+
+Install the package using the local path, e.g.
+```shell
+fisher remove dideler/dl.fish                # Remove remote version if installed
+fisher install ~/github.com/dideler/dl.fish  # Install the cloned source, your path might differ
+```
+
+Now when you run `dl` it will use a snapshot of the development version.
+Repeat `fisher install` to update the installed snapshot.
+
 ## Usage
 
 ```fish
